@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102640">
+<title>Make America General Again — Satire / Parody</title>
+<style>
+:root{color-scheme:light;--navy:#102640;--red:#b52c36;--cream:#fff8e9;--gold:#f4cb70}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--navy);font-family:system-ui,sans-serif}.ribbon{padding:12px;text-align:center;background:var(--red);color:white;font-size:.8rem;font-weight:800;letter-spacing:.15em}main{max-width:880px;margin:auto;padding:28px 20px 50px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:800}header{text-align:center}h1{font-family:Georgia,serif;font-size:clamp(2.7rem,10vw,5.2rem);line-height:1;margin:18px 0}h1 span{color:var(--red)}.intro{max-width:570px;margin:20px auto;line-height:1.6}.portrait{font-size:3rem}.speech{background:white;border:2px solid var(--navy);border-radius:16px;padding:18px;max-width:560px;margin:24px auto;font-family:Georgia,serif;font-size:1.2rem;box-shadow:5px 5px 0 var(--gold)}.panel{background:white;border:1px solid #d8d2c5;border-radius:18px;padding:clamp(20px,5vw,36px);margin-top:30px}h2{font-family:Georgia,serif;font-size:1.9rem;margin:0 0 8px}label{display:block;font-weight:700;margin:22px 0 8px}input,select,button{font:inherit;border-radius:8px;width:100%;min-height:48px}input,select{padding:12px;border:1px solid #8a929c;background:white;color:var(--navy)}button{cursor:pointer;background:var(--red);color:white;border:0;padding:14px 18px;font-weight:800;margin-top:20px}button:hover{background:#90212a}button:disabled{opacity:.7;cursor:wait}:focus-visible{outline:3px solid #246ed5;outline-offset:4px}.fine{font-size:.8rem;line-height:1.6;color:#4d5866}.meter{height:14px;background:#e8e9eb;border-radius:20px;overflow:hidden;margin:18px 0}.fill{height:100%;width:0;background:var(--red);transition:width .3s}.certificate{border:6px double var(--gold);text-align:center;background:#fffdf6;padding:26px 16px;margin-top:28px;overflow-wrap:anywhere}.stars{color:#967012;font-size:2rem;letter-spacing:.2em}.name{font:700 clamp(1.8rem,7vw,3rem) Georgia,serif;margin:16px 0}.actions{display:flex;gap:12px}.actions button{background:var(--navy)}footer{text-align:center;line-height:1.6;margin-top:28px;font-size:.8rem}.confetti{position:fixed;top:-30px;pointer-events:none;animation:fall 1.7s linear forwards;z-index:5}@keyframes fall{to{transform:translateY(110vh) rotate(300deg);opacity:0}}[hidden]{display:none!important}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}@media print{body{background:white}.ribbon,header,#application,.actions,footer{display:none}.certificate{margin:0}main{padding:0}}
+</style>
+</head>
+<body>
+<div class="ribbon">SATIRE / PARODY · ZERO ACTUAL AUTHORITY</div>
+<main>
+<header>
+<p class="eyebrow">The entirely fictional office of excessive promotions</p>
+<h1>Make America<br><span>General Again.</span></h1>
+<p class="intro">Why settle for a campaign sticker when you could command the snack table? A tiny political satire about very big promises.</p>
+<div class="portrait" aria-hidden="true">🟨 🎙️ 🇺🇸</div>
+<div class="speech">“You voted for me? You're a general. Everybody's a general. The best generals. Tremendous parking privileges.”</div>
+<p class="fine">An invented Trump-style campaign promise for parody. Not a real quotation or offer.</p>
+</header>
+<section class="panel" id="application" aria-labelledby="apply-title">
+<p class="eyebrow">Your completely unofficial promotion awaits</p>
+<h2 id="apply-title">Enlist in the punchline.</h2>
+<p>No service record required. Experience opening a bag of chips preferred.</p>
+<form id="promotion-form">
+<label for="name">Your ceremonial name</label>
+<input id="name" name="name" maxlength="60" placeholder="e.g. Captain Covfefe" autocomplete="off" required>
+<label for="pledge">In this fictional election, you…</label>
+<select id="pledge" name="pledge"><option value="vote">Voted for Trump (in the story)</option><option value="snacks">Voted for better snacks</option><option value="undecided">Are still reading the menu</option></select>
+<p class="fine">Role-play only. Do not enter your real name or real voting information. Nothing is stored or sent.</p>
+<button id="promote" type="submit">Claim my totally fake commission →</button>
+</form>
+<div id="progress" hidden><div class="meter" role="progressbar" aria-label="Ceremonial paperwork" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="fill"></div></div></div>
+<p id="status" role="status" aria-live="polite"></p>
+</section>
+<section class="certificate" id="certificate" aria-labelledby="certificate-title" hidden>
+<p class="eyebrow">Souvenir certificate · Satire / Parody</p>
+<div class="stars" aria-label="Four ceremonial stars">★★★★</div>
+<h2 id="certificate-title">By the power of absolutely nobody</h2>
+<p>we hereby promote</p><p class="name" id="general-name"></p>
+<p>to <strong id="rank"></strong></p>
+<p id="assignment"></p>
+<p class="fine">Benefits: imaginary motorcade, unlimited strategic naps, and one very important clipboard.</p>
+<p><em>“Many people are saying this is a certificate.”</em></p>
+<p class="fine">Fictional parody. No military rank, legal authority, endorsement, or affiliation.</p>
+<div class="actions"><button type="button" id="print">Print souvenir</button><button type="button" id="again">Promote someone else</button></div>
+</section>
+<footer>Satire / Parody. Independent political humor; not affiliated with Donald Trump, any campaign, the U.S. government, or the U.S. military. No real commission, voting verification, or political data collection.</footer>
+</main>
+<script>
+'use strict';
+const form=document.querySelector('#promotion-form');
+const button=document.querySelector('#promote');
+const status=document.querySelector('#status');
+const progress=document.querySelector('#progress');
+const meter=document.querySelector('[role="progressbar"]');
+const fill=document.querySelector('.fill');
+const certificate=document.querySelector('#certificate');
+const assignments=['Your first mission: secure the last donut.','Your first mission: negotiate a ceasefire with the office printer.','Your first mission: defend the couch from unauthorized laundry.','Your first mission: lead Operation Find My Other Sock.'];
+form.addEventListener('submit',async(event)=>{
+ event.preventDefault();
+ const name=document.querySelector('#name').value.trim();
+ if(!name){status.textContent='Even an imaginary general needs a ceremonial name.';return;}
+ button.disabled=true;certificate.hidden=true;progress.hidden=false;
+ const pledge=document.querySelector('#pledge').value;
+ const steps=['Checking imaginary ballots…','Consulting the very important clipboard…','Adding stars. So many stars…','Paperwork successfully exaggerated.'];
+ for(let i=0;i<steps.length;i++){
+  status.textContent=steps[i];fill.style.width=`${(i+1)*25}%`;meter.setAttribute('aria-valuenow',String((i+1)*25));
+  await new Promise(resolve=>setTimeout(resolve,450));
+ }
+ document.querySelector('#general-name').textContent=name;
+ document.querySelector('#rank').textContent=pledge==='vote'?'Four-Star General of Tremendous Loyalty':pledge==='snacks'?'Four-Star General of Strategic Snacks':'Four-Star General of Pending Decisions';
+ document.querySelector('#assignment').textContent=assignments[Math.floor(Math.random()*assignments.length)];
+ certificate.hidden=false;progress.hidden=true;button.disabled=false;
+ status.textContent='Promotion complete! Your authority remains entirely imaginary.';
+ certificate.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  for(let i=0;i<28;i++){
+   const piece=document.createElement('span');piece.className='confetti';piece.textContent='★';piece.setAttribute('aria-hidden','true');piece.style.left=`${Math.random()*100}%`;piece.style.color=['#b52c36','#102640','#c29332'][i%3];piece.style.animationDelay=`${Math.random()*.4}s`;document.body.append(piece);setTimeout(()=>piece.remove(),2300);
+  }
+ }
+});
+document.querySelector('#print').addEventListener('click',()=>window.print());
+document.querySelector('#again').addEventListener('click',()=>{certificate.hidden=true;status.textContent='Next in line! The imaginary budget is unlimited.';form.reset();fill.style.width='0';meter.setAttribute('aria-valuenow','0');document.querySelector('#name').focus();});
+</script>
+</body>
+</html>
